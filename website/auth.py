@@ -31,7 +31,7 @@ def login():
         flash('Email does not exist.', category='error')  # Flash message for non-existing email
         
     # Render the login.html template and pass current_user to template context
-return render_template("login.html", user=current_user)
+    return render_template("login.html", user=current_user)
 
 
 # Decorate the logout function with the route '/logout' under the 'auth' blueprint
