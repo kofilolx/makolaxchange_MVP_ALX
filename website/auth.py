@@ -21,18 +21,17 @@ def login():
 
         user = User.query.filter_by(email=email).first()  # Query the User table for the user with given email
 
-        if user:  # If user exists
-            if check_password_hash(user.password, password):  # Check if password matches hashed password
-                flash('Logged in successfully!', category='success')  # Flash message for successful login
-                login_user(user, remember=True)  # Login the user, with 'remember me' option enabled
-                return redirect(url_for('views.index'))  # Redirect to index page after login
-            else:
-                flash('Incorrect password, try again.', category='error')  # Flash message for incorrect password
+        if user and check_password_hash(user.password, password): # Check if password matches hashed password
+            flash('Logged in successfully!', category='success')  # Flash message for successful login
+            login_user(user, remember=True)  # Login the user, with 'remember me' option enabled
+            return redirect(url_for('views.index'))  # Redirect to index page after login
         else:
-            flash('Email does not exist.', category='error')  # Flash message for non-existing email
-
+            flash('Incorrect password, try again.', category='error')  # Flash message for incorrect password
+    else:
+        flash('Email does not exist.', category='error')  # Flash message for non-existing email
+        
     # Render the login.html template and pass current_user to template context
-    return render_template("login.html", user=current_user)
+return render_template("login.html", user=current_user)
 
 
 # Decorate the logout function with the route '/logout' under the 'auth' blueprint
