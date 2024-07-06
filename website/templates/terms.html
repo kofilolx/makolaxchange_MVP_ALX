@@ -1,0 +1,36 @@
+{% extends "layout.html" %}  <!-- Extend the layout.html template -->
+
+{% block title %}Terms{% endblock %}  <!-- Set the title of the page to "Terms" -->
+
+{% block content %}  <!-- Define the content block -->
+<div class="popup-overlay" id="termsPopup">  <!-- Popup overlay for terms -->
+    <div class="popup-content">  <!-- Popup content -->
+        <button class="close-btn" onclick="closePopup()">✖</button>  <!-- Close button for the popup -->
+        <h2>Terms and Conditions</h2>  <!-- Heading for terms and conditions -->
+        <p>Welcome to MakolaXchange! This tool allows you to convert Ghanaian local units to standard metric units. By using this tool, you agree to the following terms and conditions:</p>  <!-- Introduction paragraph -->
+
+        <h3>Usage Terms</h3>  <!-- Heading for usage terms -->
+        <p>To use the conversion tool, select the ingredient, enter the quantity, and choose the local unit and preferred standard metric unit. Ensure the accuracy of your inputs for the best results.</p>  <!-- Usage terms description -->
+
+        <h3>Accuracy Disclaimer</h3>  <!-- Heading for accuracy disclaimer -->
+        <p>The conversion factors provided by this tool are not guaranteed to be accurate. Users should independently verify the results before use.</p>  <!-- Accuracy disclaimer description -->
+
+        <h3>Liability Disclaimer</h3>  <!-- Heading for liability disclaimer -->
+        <p>MakolaXchange is not liable for any inaccuracies or misuse of the conversion tool. Use it at your own risk.</p>  <!-- Liability disclaimer description -->
+
+        <h3>Privacy Policy</h3>  <!-- Heading for privacy policy -->
+        <p>MakolaXchange respects your privacy. Any data entered into the conversion tool is not stored or shared.</p>  <!-- Privacy policy description -->
+
+        <h3>Contact Information</h3>  <!-- Heading for contact information -->
+        <p>If you have any questions or need support, please contact us at support@makolaxchange.com.</p>  <!-- Contact information description -->
+
+        <div class="popup-footer">  <!-- Popup footer section -->
+            <label for="acceptTerms">
+                <input type="checkbox" id="acceptTerms">
+                I accept the terms and conditions
+            </label>  <!-- Checkbox to accept terms -->
+            <button onclick="acceptTerms()">Accept</button>  <!-- Button to accept terms -->
+        </div>
+    </div>
+</div>
+{% endblock %}  <!-- End of content block -->

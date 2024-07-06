@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% block title %}MakolaXchange{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <h1>Ghana Local Unit Converter</h1>
+        </div>
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 mt-4">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <select class="form-control bg-secondary text-white">
+                            <option>-select ingredient-</option>
+                            <option>-select ingredient-</option>
+                            <option>-select ingredient-</option>
+                            <option>-select ingredient-</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control bg-secondary text-white">
+                            <option>
+                                
+                            </option>
+                            <option>-select decimal places-</option>
+                            <option>-select decimal places-</option>
+                            <option>-select decimal places-</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <select class="form-control bg-secondary text-white">
+                            <option>-select unit-</option>
+                            <option>-select unit-</option>
+                            <option>-select unit-</option>
+                            <option>-select unit-</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select class="form-control bg-secondary text-white">
+                            <option>-select quantity-</option>
+                            <option>-select quantity-</option>
+                            <option>-select quantity-</option>
+                            <option>-select quantity-</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <select class="form-control bg-secondary text-white">
+                            <option>-select unit-</option>
+                            <option>-select unit-</option>
+                            <option>-select unit-</option>
+                            <option>-select unit-</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <button type="button" class="btn btn-danger btn-block">Calculate</button>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <button type="button" class="btn btn-danger btn-block">Swap</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 mt-4">
+            <form method="POST" class="form-box">
+                <!-- <p>submit conversion factor</p> -->
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control bg-secondary text-white" placeholder="-Ingredient-">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select class="form-control bg-secondary text-white">
+                            <option>-select unit-</option>
+                            <option>-select unit-</option>
+                            <option>-select unit-</option>
+                            <option>-select unit-</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control bg-secondary text-white"
+                            placeholder="-weight (kg | olonka)-">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-danger btn-block">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

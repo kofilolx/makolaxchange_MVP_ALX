@@ -1,0 +1,87 @@
+:root {
+    --gray-dark: #0e1117;
+}
+
+/* Custom Wrapper */
+.wrapper {
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.image {
+    padding: 0;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.opt ul {
+    padding: 0;
+}
+
+.opt ul li {
+    list-style: none;
+    display: inline;
+}
+
+.opt ul li a {
+    color: #777777;
+    font-weight: 100;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.opt ul li a.active {
+    font-weight: bold;
+    color: #2d2d2d;
+}
+
+/* Form Customizations */
+.form-control {
+    background: #e4e4e4;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    color: #000000;
+}
+
+.form-control:focus {
+    border: 1px solid #c0c0c0;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background-color: #116b8f;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #116b8fe0;
+}
+
+.recover a {
+    text-decoration: none;
+    color: #464647;
+}
+
+.member a {
+    color: #116b8f;
+    text-decoration: none;
+}
+
+/* Image Customizations */
+.bg-0-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Additional Bootstrap Overrides */
+.bg-dark {
+    background-color: var(--gray-dark) !important;
+}
