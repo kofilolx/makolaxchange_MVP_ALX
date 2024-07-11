@@ -47,6 +47,9 @@ header {
   justify-content: center;
   align-items: center;
 }
+.text-black{
+  color:black;
+}
 
 .btn-danger {
   width: 100%;
