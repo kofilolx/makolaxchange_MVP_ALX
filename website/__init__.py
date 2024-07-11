@@ -23,7 +23,7 @@ def create_app():
     # Import views and authentication blueprints, and models
     from .views import views
     from .auth import auth
-    from .models import Calculator, Ingredient, units, factor, conversions, User, User_access, access
+    from .models import Ingredient, Unit, Conversion, User
 
     # Create all database tables within the app context
     with app.app_context():

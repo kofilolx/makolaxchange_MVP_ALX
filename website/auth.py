@@ -46,7 +46,7 @@ def logout():
 def register():
     if request.method == 'POST':
         email = request.form.get('email')
-        fullname = request.form.get('fullname')
+        username = request.form.get('username')
         password = request.form.get('password')
 
         user = User.query.filter_by(email=email).first()
@@ -54,14 +54,14 @@ def register():
             flash('Email already exists.', category='error')
         elif len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')
-        elif len(fullname) < 2:
+        elif len(username) < 2:
             flash('First name must be greater than 1 character.', category='error')
         # elif password1 != password2:
         #     flash('Passwords don\'t match.', category='error')
         elif len(password) < 7:
             flash('Password must be at least 7 characters.', category='error')
         else:
-            new_user = User(email=email, fullname=fullname, password=generate_password_hash(password, method='pbkdf2:sha256'))
+            new_user = User(email=email, username=username, password=generate_password_hash(password, method='pbkdf2:sha256'))
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)

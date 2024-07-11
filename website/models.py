@@ -1,56 +1,41 @@
 # Import the db object from the current package
 from . import db
-# Import UserMixin for user model
+# Import UserMixin for user Model
 from flask_login import UserMixin
 
-# Define the Calculator model
-class Calculator(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
-# Define the Ingredient model
-class Ingredient(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-
-# Define the units model
-class units(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20), nullable=False)
-    abbreviation = db.Column(db.String(10), nullable=False)
-    category = db.Column(db.Integer, db.ForeignKey('ingredient.id'), nullable=False)
-
-# Define the factor model
-class factor(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), db.ForeignKey('ingredient.id'), nullable=False)
-    conversion_id = db.Column(db.Integer, db.ForeignKey('conversions.id'), nullable=False)
-
-# Define the conversions model
-class conversions(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    from_unit = db.Column(db.String(50), db.ForeignKey('units.id'), nullable=False)
-    to_unit = db.Column(db.String(50), db.ForeignKey('units.id'), nullable=False)
-    factor = db.Column(db.Integer, db.ForeignKey('factor.id'))
-
-# Define the User model with UserMixin
+# Define the User Model with UserMixin
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    fullname = db.Column(db.String(150), nullable=False)
+    username = db.Column(db.String(150), nullable=False)
     email = db.Column(db.String(150), unique=True, nullable=False)
     password = db.Column(db.String(150), nullable=False)
-    calculator = db.relationship('Calculator')
+    # calculator = db.db.relationship('Calculator')
     # Example commented fields:
     # register_date = db.Column(db.DateTime, nullable=False, default=db.func.current_timestamp())
     # last_login = db.Column(db.DateTime, nullable=True)
     # is_admin = db.Column(db.Boolean, default=False)
 
-# Define the access model
-class access(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+class Ingredient(db.Model):
+    __tablename__ = 'ingredients'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String, nullable=False)
+    units = db.relationship('Unit', back_populates='ingredient')
+    conversions = db.relationship('Conversion', back_populates='ingredient')
 
-# Define the User_access model
-class User_access(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    access_id = db.Column(db.Integer, db.ForeignKey('access.id'), nullable=False)
+class Unit(db.Model):
+    __tablename__ = 'units'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String, nullable=False)
+    ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredients.id'))
+    ingredient = db.relationship('Ingredient', back_populates='units')
+
+class Conversion(db.Model):
+    __tablename__ = 'conversions'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    ingredient_id = db.Column(db.Integer, db.ForeignKey('ingredients.id'))
+    from_unit_id = db.Column(db.Integer, db.ForeignKey('units.id'))
+    to_unit_id = db.Column(db.Integer, db.ForeignKey('units.id'))
+    conversion_factor = db.Column(db.Float, nullable=False)
+    ingredient = db.relationship('Ingredient', back_populates='conversions')
+    from_unit = db.relationship('Unit', foreign_keys=[from_unit_id])
+    to_unit = db.relationship('Unit', foreign_keys=[to_unit_id])

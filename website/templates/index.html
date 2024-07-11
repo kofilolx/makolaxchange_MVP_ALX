@@ -9,7 +9,9 @@ block content %}
       <form>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <select class="form-control bg-secondary text-white">
+            <select
+              class="form-control bg-secondary text-white"
+              name="ingredient">
               <option selected value="Gari">Gari</option>
               <option>-select ingredient-</option>
               <option>-select ingredient-</option>
@@ -23,19 +25,19 @@ block content %}
               name="decimal_places"
               placeholder="Decimal places"
             />
-            </div>
+          </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <select class="form-control bg-secondary text-white">
-                <optgroup value="GH">
-                    <option selected value="olonka">olonka</option>
-                    <option value="margarine_cup">margarine cup</option>
-                  </optgroup>
-                  <optgroup value="US">
-                    <option value="gram">gram</option>
-                    <option value="kilogram">kilogram</option>
-                  </optgroup>
+              <optgroup label="GH">
+                <option selected value="olonka">olonka</option>
+                <option value="margarine_cup">margarine cup</option>
+              </optgroup>
+              <optgroup label="US">
+                <option value="gram">gram</option>
+                <option value="kilogram">kilogram</option>
+              </optgroup>
             </select>
           </div>
           <div class="form-group col-md-6">
@@ -45,19 +47,19 @@ block content %}
               name="quantity"
               placeholder="Quantity"
             />
-            
+          </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <select class="form-control bg-secondary text-white">
-                <optgroup value="GH">
-                    <option selected value="olonka">olonka</option>
-                    <option value="margarine_cup">margarine cup</option>
-                  </optgroup>
-                  <optgroup value="US">
-                    <option value="gram">gram</option>
-                    <option value="kilogram">kilogram</option>
-                  </optgroup>
+              <optgroup label="GH">
+                <option selected value="olonka">olonka</option>
+                <option value="margarine_cup">margarine cup</option>
+              </optgroup>
+              <optgroup label="US">
+                <option value="gram">gram</option>
+                <option value="kilogram">kilogram</option>
+              </optgroup>
             </select>
           </div>
           <div class="form-group col-md-3">
@@ -87,12 +89,15 @@ block content %}
             />
           </div>
           <div class="form-group col-md-4">
-            <select class="form-control bg-secondary text-white">
-              <optgroup value="GH">
+            <select
+              class="form-control bg-secondary text-white"
+              name="new-weight"
+            >
+              <optgroup label="GH">
                 <option selected value="olonka">olonka</option>
                 <option value="margarine_cup">margarine cup</option>
               </optgroup>
-              <optgroup value="US">
+              <optgroup label="US">
                 <option value="gram">gram</option>
                 <option value="kilogram">kilogram</option>
               </optgroup>
