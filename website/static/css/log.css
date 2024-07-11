@@ -88,8 +88,13 @@
 }
 
 .mb-5, .my-5 {
-    margin-bottom: 3rem !important;
-  }
-  .mt-5, .my-5 {
-    margin-top: 16rem !important;
+  margin-bottom: 3rem !important;
+}
+.mt-5, .my-5 {
+  margin-top: 10rem !important;
+}
+
+.mb-4 {
+    margin-top: .5rem !important;
+    margin-bottom: 1rem !important;
   }
