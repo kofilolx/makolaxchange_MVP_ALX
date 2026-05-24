@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm --filter=./frontend install && pnpm --filter=./frontend build",
+  "devCommand": "vercel dev",
+  "experimentalServices": {
+    "backend": {
+      "entrypoint": "backend/main.py",
+      "routePrefix": "/api"
+    }
+  }
+}

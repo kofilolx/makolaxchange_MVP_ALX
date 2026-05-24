@@ -1,0 +1,20 @@
+{
+  "name": "flask",
+  "version": "1.0.0",
+  "description": "Welcome to MakolaXchange, your one-stop shop for simplifying unit conversions in the Ghanaian marketplace! We understand the importance of accurate measurements when buying, selling, or preparing food. That's why we built this user-friendly web application to bridge the gap between traditional local units and standardized metric units.",
+  "homepage": "https://github.com/kofilolx/makolaxchange_MVP_ALX#readme",
+  "bugs": {
+    "url": "https://github.com/kofilolx/makolaxchange_MVP_ALX/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kofilolx/makolaxchange_MVP_ALX.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
